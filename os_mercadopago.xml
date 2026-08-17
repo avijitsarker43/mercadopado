@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.0" type="osmplugin" group="payment">
+	<name>os_mercadopago</name>
+	<title>Mercadopago</title>
+	<author>Avijit Sarker</author>
+	<creationDate>09-Sep-2023</creationDate>
+	<copyright>Copyright 2023 Avijit Sarker</copyright>
+	<license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2</license>
+	<authorEmail>avijitsarker430@gmail.com</authorEmail>
+	<authorUrl>mailto:avijitsarker430@gmail.com</authorUrl>
+	<version>3.1.2</version>
+	<description>Mercadopago - www.mercadopago.cl Payment Plugin For Membership Pro Extension</description>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="mode" type="list" label="Payment Mode" default="1">
+					<option value="0">Sandbox</option>
+					<option value="1">Live</option>
+				</field>
+				<field name="public_key" type="text" size="60" label="Public Key"  showon="mode:1" />
+				<field name="access_token" type="text" size="60" label="Access Token"  showon="mode:1" />
+				<field name="app_id" type="text" size="60" label="App ID"  showon="mode:1" />
+				<field name="sandbox_public_key" type="text" size="60" label="Sandbox Public Key"  showon="mode:0" />
+				<field name="sandbox_access_token" type="text" size="60" label="Sandbox Access Token"  showon="mode:0" />
+				<field name="sandbox_app_id" type="text" size="60" label="Sandbox APP ID" showon="mode:0" />				
+				<field name="icon" type="imagelist" directory="media/com_osmembership/assets/images/paymentmethods" label="Icon"
+					   description="If you want to show icon instead of payment method title on subscription form, upload it to media/com_osmembership/assets/images/paymentmethods folder and select the icon here. For example os_creditcard.png" />
+				<field name="payment_fee_amount" type="text" label="Payment Processing Fee ($)" />
+				<field name="payment_fee_percent" type="text" label="Payment Processing Fee (%)" />
+				<field name="ipn_log" type="list" label="Enable Log" description="This is only used for debug purpose when requested. Please set it to No unless requested by our support team" default="0">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<files>
+		<folder>mercadopago</folder>
+		<filename>os_mercadopago.php</filename>
+	</files>
+</install>
